@@ -2,7 +2,7 @@
 import os
 import sys
 
-
+#JKB
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mini_auth_project.settings')
     try:
