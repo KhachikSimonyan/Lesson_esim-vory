@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | Mini Auth{% endblock %}
+
+{% block content %}
+<section class="hero card">
+    <div>
+        <span class="badge">Django + HTML + CSS + JS</span>
+        <h1>Small authentication project</h1>
+        <p>
+            This demo includes a home page, registration, login, logout, and a protected dashboard.
+        </p>
+
+        <div class="hero-actions">
+            {% if user.is_authenticated %}
+                <a href="{% url 'dashboard' %}" class="btn">Go to dashboard</a>
+            {% else %}
+                <a href="{% url 'register' %}" class="btn">Create account</a>
+                <a href="{% url 'login' %}" class="btn btn-secondary">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

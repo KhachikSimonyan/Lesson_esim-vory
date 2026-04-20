@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard | Mini Auth{% endblock %}
+
+{% block content %}
+<section class="card dashboard-card">
+    <span class="badge">Protected page</span>
+    <h2>Welcome, {{ user.username }}</h2>
+    <p>Your account is active and you are logged in.</p>
+
+    <div class="dashboard-grid">
+        <div class="mini-panel">
+            <h3>Username</h3>
+            <p>{{ user.username }}</p>
+        </div>
+        <div class="mini-panel">
+            <h3>Email</h3>
+            <p>{{ user.email|default:'Not provided' }}</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
